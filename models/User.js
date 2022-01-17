@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const profileImage = '..public/uploads/default/profileDefault.jpg' 
+
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -28,6 +30,30 @@ const UserSchema = new mongoose.Schema({
         type: String,
         unique: true
     } ,
+    profilePic: {
+        type: String,
+        default: profileImage
+    },
+    posts:{
+        type: Array,
+        default: []
+    },
+    sentRequestsTo:{
+        type: Array,
+        default: []
+    },
+    receivedRequestsFrom:{
+        type: Array,
+        default: []
+    },
+    friendsList:{
+        type: Array,
+        default: []
+    },
+    blockList:{
+        type: Array,
+        default: []
+    },
     created_at: {
         type: Date,
         default: Date.now

@@ -4,6 +4,8 @@ const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const nodemailer = require('../config/nodemailer.config')
+const updateProfileImage = require('../controller/updateProfileImage')
+
 
 
 router.post('/register', async (req, res)=>{
@@ -71,10 +73,11 @@ router.post('/login', async (req, res) => {
 
     //create and assign a token
     const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET)
-    res.header('auth-token', token).send("Login successful \n"+token)    
+    res.header('auth-token', token).send(token )   
 
 })
 
+router.use('/updateProfileImage',updateProfileImage)
 
 
 module.exports=router;
