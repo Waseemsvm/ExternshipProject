@@ -34,10 +34,6 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: profileImage
     },
-    posts:{
-        type: Array,
-        default: []
-    },
     sentRequestsTo:{
         type: Array,
         default: []

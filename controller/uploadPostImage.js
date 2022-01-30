@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User')
 const verify = require('../routes/verifyToken')
+const Post = require('../models/Post')
 
 // const app = express();
 
@@ -33,6 +34,8 @@ router.post('/', verify ,upload.single('image'), async (req, res) => {
     
     //update the profileImagepath
     user.posts.push(req.file.filename)
+
+    
 
     //save the user to the database
     // console.log(req.file.filename)
