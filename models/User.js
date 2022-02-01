@@ -26,6 +26,11 @@ const UserSchema = new mongoose.Schema({
         enum: ['Pending', 'Active'],
         default: 'Pending'
     },
+    visibility:{
+        type: String,
+        enum: ['public', 'private'],
+        default: 'private'
+    },
     confirmationCode: {
         type: String,
         unique: true

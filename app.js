@@ -26,6 +26,8 @@ const removeFriend = require('./controller/removeFriend')
 const rejectRequest = require('./controller/rejectFriendRequests')
 const getUsers = require('./controller/getAllFriends')
 const postRoute = require('./routes/post')
+const profileVisibility = require('./routes/profileVisibility')
+
 
 //GET /
 app.get('/', (req, res) => {
@@ -73,6 +75,8 @@ app.use('/removeFriend', removeFriend)
 app.use('/getUsers', getUsers)
 
 app.use('/post', postRoute)
+
+app.use('/profileVisibility', profileVisibility)
 
 //listen to the server
 app.listen(process.env.PORT, () => {

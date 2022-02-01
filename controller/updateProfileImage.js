@@ -39,7 +39,7 @@ router.post('/',verify, upload.single('image'), async (req, res) => {
 
     await user.save(err => {
         if(err) return res.status(400).send({message: err})
-        res.send({message: "successfully updated the profile picture"})
+        return res.send({message: "successfully updated the profile picture"})
     })
     
 } )

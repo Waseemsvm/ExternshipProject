@@ -4,6 +4,11 @@ const PostSchema = new mongoose.Schema({
     user:{
         type: String,
         required: true
+    }, 
+    postType: {
+        type: String,
+        enum: ['text', 'image'],
+        default: 'text'
     },
     data:{
         type: String,
